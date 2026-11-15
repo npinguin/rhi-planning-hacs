@@ -286,6 +286,7 @@ const PLAN_COPY={"en":{"planning":"Planning","overview":"Overview","upcoming":"U
 const PLAN_URL=import.meta.url;
 const PLAN_CSS=".plan-list{display:grid;gap:var(--rhi-space-3)}";
 class PlanningOverviewCard extends HTMLElement{
+ static getStubConfig(){return {type:"custom:rhi-planning-overview-card"};}
  constructor(){super();this.attachShadow({mode:"open"});this.seq=0;this.started=false;this.data=null;this.busy=false;this.page="overview";}
  setConfig(config){this.config=config||{};this.seq++;this.started=false;this.start();}
  set hass(hass){if(this.h?.user?.id!==hass?.user?.id){this.seq++;this.started=false;this.data=null;this.busy=false;this.pending=null;this.feedback=null;this.authoring=null;}this.h=hass;const native=this.shadowRoot?.querySelector("scheduler-card");if(native)native.hass=hass;this.start();}
@@ -314,3 +315,8 @@ class PlanningOverviewCard extends HTMLElement{
  async commit(){if(this.busy||!this.pending||!this.h?.user?.is_admin)return;const {title,...request}=this.pending,seq=++this.seq;this.busy=true;this.feedback=null;this.render();try{if(!await this.available(seq))return;const result=await this.api("set_schedule_enabled",request);if(seq!==this.seq)return;const data=await this.read(seq);if(!data)return;this.data=data;if(!result.confirmed||![...data.upcoming,...data.other].some(row=>row.identity_namespace==="ha_scheduler"&&row.plan_id===request.plan_id&&row.can_set_enabled&&row.enabled===request.enabled))throw Error("unverified");this.feedback="saved";}catch{if(seq===this.seq){this.data=null;this.feedback="failed";}}finally{if(seq===this.seq){this.busy=false;this.pending=null;this.render();}}}
 }
 if(!customElements.get("rhi-planning-overview-card"))customElements.define("rhi-planning-overview-card",PlanningOverviewCard);
+
+if(typeof window!=="undefined"){
+ window.customCards=window.customCards||[];
+ if(!window.customCards.some(card=>card.type==="rhi-planning-overview-card"))window.customCards.push({type:"rhi-planning-overview-card",name:"RHI Planning",description:"RHI Planning dashboard",preview:false});
+}

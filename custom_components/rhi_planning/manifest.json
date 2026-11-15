@@ -2,7 +2,8 @@
   "domain": "rhi_planning",
   "name": "RHI Planning",
   "after_dependencies": [
-    "http"
+    "http",
+    "frontend"
   ],
   "codeowners": [
     "@npinguin"
@@ -12,5 +13,5 @@
   "integration_type": "service",
   "iot_class": "local_push",
   "issue_tracker": "https://github.com/npinguin/rhi-planning-hacs/issues",
-  "version": "0.1.1"
+  "version": "0.1.2"
 }

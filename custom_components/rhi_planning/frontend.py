@@ -4,6 +4,8 @@ from pathlib import Path
 
 from aiohttp import web
 from homeassistant.components.http import HomeAssistantView
+from homeassistant.components import frontend
+from homeassistant.core import callback
 from homeassistant.config_entries import ConfigEntryState
 
 from . import DOMAIN
@@ -26,7 +28,7 @@ class PlanningCardView(HomeAssistantView):
 
     def _enabled(self):
         entries = self.hass.config_entries.async_entries(DOMAIN)
-        return len(entries) == 1 and entries[0].state == ConfigEntryState.LOADED and entries[0].options.get(OPTION) is True
+        return len(entries) == 1 and entries[0].state == ConfigEntryState.LOADED and entries[0].options.get(OPTION, True) is True
 
     async def get(self, request):
         if not self._enabled():
@@ -50,3 +52,30 @@ async def async_register_frontend(hass):
 
     payload, version = await hass.async_add_executor_job(load)
     hass.http.register_view(PlanningCardView(hass, payload, version))
+
+
+def async_setup_ux(hass, entry):
+    """Register the bundled module through HA; never mutate Lovelace storage."""
+    owned = False
+
+    @callback
+    def sync():
+        nonlocal owned
+        manager = hass.data.get(frontend.DATA_EXTRA_MODULE_URL)
+        if manager is None:
+            return  # A headless HA installation does not need frontend.
+        enabled = entry.state is ConfigEntryState.LOADED and entry.options.get(OPTION, True) is True
+        if enabled and RESOURCE not in manager.urls:
+            frontend.add_extra_js_url(hass, RESOURCE)
+            owned = True
+        elif not enabled and owned:
+            if RESOURCE in manager.urls:
+                frontend.remove_extra_js_url(hass, RESOURCE)
+            owned = False
+
+    async def updated(hass, entry):
+        sync()
+
+    entry.async_on_unload(entry.async_on_state_change(sync))
+    entry.async_on_unload(entry.add_update_listener(updated))
+    sync()

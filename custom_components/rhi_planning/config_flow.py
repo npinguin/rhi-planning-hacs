@@ -27,5 +27,5 @@ class RHIOptionsFlow(config_entries.OptionsFlow):
         if user_input is not None:
             return self.async_create_entry(title="", data={**self.config_entry.options, **user_input})
         return self.async_show_form(step_id="init", data_schema=vol.Schema({
-            vol.Required(OPTION, default=self.config_entry.options.get(OPTION, False)): bool,
+            vol.Required(OPTION, default=self.config_entry.options.get(OPTION, True)): bool,
         }))

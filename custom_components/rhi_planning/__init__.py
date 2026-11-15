@@ -24,6 +24,8 @@ async def async_setup_entry(hass, entry):
     entry.runtime_data = Runtime(hass, entry)
     await entry.runtime_data.start()
     await hass.config_entries.async_forward_entry_setups(entry, ["sensor"])
+    from .frontend import async_setup_ux
+    async_setup_ux(hass, entry)
     return True
 
 
