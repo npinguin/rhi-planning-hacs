@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up RHI Planning",
+        "description": "Install the read-only planning pilot. Existing schedules stay in their native scheduler. You can configure providers later."
+      }
+    },
+    "abort": {
+      "already_configured": "RHI Planning is already installed."
+    }
+  },
+  "services": {
+    "get_overview": {
+      "name": "Get planning overview",
+      "description": "Read the current qualified plan projection. Administrator only."
+    },
+    "set_schedule_enabled": {
+      "name": "Enable or pause native schedule",
+      "description": "Explicitly change a qualified native Scheduler record; no owner plan control.",
+      "fields": {
+        "plan_id": {
+          "name": "Schedule",
+          "description": "Stable native schedule identity."
+        },
+        "enabled": {
+          "name": "Enabled",
+          "description": "Requested state."
+        },
+        "expected_enabled": {
+          "name": "Current enabled state",
+          "description": "Last read state; stale actions are rejected."
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Planning dashboard card",
+        "description": "Optional read-only card. The backend and native Scheduler remain active when disabled. Add the resource manually only if needed.",
+        "data": {
+          "enable_ux": "Enable bundled dashboard card"
+        }
+      }
+    }
+  }
+}

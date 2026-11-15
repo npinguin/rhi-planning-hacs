@@ -1,0 +1,34 @@
+get_overview: {}
+
+set_schedule_enabled:
+  fields:
+    plan_id:
+      required: true
+      selector:
+        text: {}
+    enabled:
+      required: true
+      selector:
+        boolean: {}
+    expected_enabled:
+      required: true
+      selector:
+        boolean: {}
+
+get_authoring: {}
+set_target_approval:
+  fields:
+    expected_revision:
+      required: true
+      selector:
+        number:
+          min: 0
+          mode: box
+    target_id:
+      required: true
+      selector:
+        text: {}
+    approved:
+      required: true
+      selector:
+        boolean: {}

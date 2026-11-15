@@ -1,0 +1,49 @@
+name: Validate HACS Distribution
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: home-assistant/actions/hassfest@master
+      - uses: hacs/action@main
+        with:
+          category: integration
+          # Custom TEST repository, not a request for inclusion in HACS defaults.
+          # Proprietary runtime has a scoped distribution notice, not an OSI grant.
+          ignore: description topics license
+      - name: Verify exact runtime inventory and protected architectures
+        run: |
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('custom_components/rhi_planning')
+          p=json.loads(Path('DISTRIBUTION_SOURCE.json').read_text())
+          assert p['status']=='PROTECTED_TEST_CANDIDATE' and not p['approved_release'] and not p['basic_cutover_ready']
+          assert set(p['platforms'])=={'x86_64','aarch64'}
+          assert json.loads((root/'manifest.json').read_text())['version']==p['manifest_version']
+          files={f.relative_to(root).as_posix():hashlib.sha256(f.read_bytes()).hexdigest() for f in root.rglob('*') if f.is_file()}
+          assert files==p['runtime_files']
+          assert {k for k in files if k.endswith('.py')}=={'__init__.py','config_flow.py','sensor.py','diagnostics.py','frontend.py'}
+          assert len([k for k in files if k.endswith('.so')])==8
+          for f in (root/'brand').iterdir():
+              assert f.read_bytes()==(Path('brand')/f.name).read_bytes()
+          assert (root/'DISTRIBUTION_NOTICE.md').is_file() and (root/'GPL-3.0-only.txt').is_file()
+          assert Path('LICENSE').read_bytes() == (root/'DISTRIBUTION_NOTICE.md').read_bytes()
+          assert 'all rights reserved' in (root/'DISTRIBUTION_NOTICE.md').read_text()
+          assert 'GNU GENERAL PUBLIC LICENSE' in (root/'GPL-3.0-only.txt').read_text()
+          assert (Path('frontend-source')/'CORRESPONDING_SOURCE_NOTICE.md').is_file()
+          assert (Path('frontend-source')/'CORE_LOCK.json').is_file()
+          assert {f.relative_to('frontend-source').as_posix() for f in Path('frontend-source').rglob('*') if f.is_file()}=={'CORE_LOCK.json','CORRESPONDING_SOURCE_NOTICE.md','build.mjs','planning-card.js','vendor/rhi-ux-core.js','vendor/rhi-ux-core.css'}
+          lock=json.loads(Path('frontend-source/CORE_LOCK.json').read_text())
+          for name,field in [('rhi-ux-core.js','js_sha256'),('rhi-ux-core.css','css_sha256')]:
+              assert hashlib.sha256((Path('frontend-source/vendor')/name).read_bytes()).hexdigest()==lock[field]
+          notice=(Path('frontend-source')/'CORRESPONDING_SOURCE_NOTICE.md').read_text()
+          assert 'Approval: GRANTED' in notice and 'License: GPL-3.0-only' in notice
+          print('Exact protected HACS distribution verified')
+          PY

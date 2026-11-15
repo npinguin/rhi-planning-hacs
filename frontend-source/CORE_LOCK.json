@@ -1,0 +1,8 @@
+{
+  "version": "1.6.4",
+  "source_commit": "501caa2c038f21f299933e68aa320e3d40198709",
+  "source_repository": "npinguin/rhi-ux-core",
+  "license": "GPL-3.0-only",
+  "js_sha256": "9b191ae25e1ecb5d60cd5833771d225df97667971feba5f9e1052cf3fd03882f",
+  "css_sha256": "071b958b146a96a015f587d483046873029b03a7eb7ad1f4dba7ca92234440fb"
+}

@@ -1,0 +1,72 @@
+{
+  "status": "PROTECTED_TEST_CANDIDATE",
+  "source_commit": "5126938d31fe4a83fa0bcff674f5de8eb0274259",
+  "source_zip_sha256": "e0b793dbeaf13b286ff92e53263ffe18e6fddfe91c0c7fd0865ac7319ff82d5f",
+  "protected_zip_sha256": "238fe57f64ed3221d96fb4c1bf5c11e31b6785d48ed0164375cd57273cb746ed",
+  "manifest_version": "0.1.1",
+  "platforms": {
+    "aarch64": {
+      "ha_image": "ghcr.io/home-assistant/home-assistant@sha256:6785d1eca68747a524c156faae1b139ed415c07357386ae6fe17291986e59e82",
+      "python": "3.14.10",
+      "extension_suffix": ".cpython-314-aarch64-linux-musl.so",
+      "cython": "3.2.9",
+      "compiler": "cc (Alpine 15.2.0) 15.2.0",
+      "protected_zip_sha256": "8e6a9d6beb3401d3db717815e9f0c158222523c010ce75f5b6e99e18cf370d09"
+    },
+    "x86_64": {
+      "ha_image": "ghcr.io/home-assistant/home-assistant@sha256:6785d1eca68747a524c156faae1b139ed415c07357386ae6fe17291986e59e82",
+      "python": "3.14.10",
+      "extension_suffix": ".cpython-314-x86_64-linux-musl.so",
+      "cython": "3.2.9",
+      "compiler": "cc (Alpine 15.2.0) 15.2.0",
+      "protected_zip_sha256": "023667785ade04fbed101ee193905eb4109522d16e004911d171a0749774cdbf"
+    }
+  },
+  "protected_modules": [
+    "ha_runtime.py",
+    "model.py",
+    "native_scheduler.py",
+    "targets.py"
+  ],
+  "readable_native_adapters": [
+    "__init__.py",
+    "config_flow.py",
+    "diagnostics.py",
+    "frontend.py",
+    "sensor.py"
+  ],
+  "runtime_files": {
+    "DISTRIBUTION_NOTICE.md": "398dc88e492dc9ed4300ac4c5afd0f963a3b3adb764b9c1fd2e45e81c02ca31f",
+    "GPL-3.0-only.txt": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0",
+    "__init__.py": "86857b07e4756b684e52c02bfa3d9213ab7ffd601f706d71190bbccec802d9c1",
+    "assets/robotix_home_assistant_logo.png": "20df6bc79a72407dac2feaea43a96381eeb0c93005e3e75bd2a9877d05239261",
+    "brand/icon.png": "960321934daedcd75e08e7146d4f983dae0081e910d00750793053205a43d3ba",
+    "brand/icon@2x.png": "20df6bc79a72407dac2feaea43a96381eeb0c93005e3e75bd2a9877d05239261",
+    "brand/logo.png": "d9bded56e39e44bdf9cc06ba6db92d1ac16e3e497a95071e6672034f4e1884ee",
+    "brand/logo@2x.png": "0b6af551f2939c13d18eb9ef763c0dbed5e75c0956da8548d9b17315e44a568c",
+    "config_flow.py": "f9e571dce72c97d5b5d0d980f354ff7c9344fdb39266b021559df912370df1fe",
+    "diagnostics.py": "d1afed0b120d2e4629372f6f0fbbca8d6c9b2ab8f16bd2b2f3be9a1b3ef3b3a3",
+    "frontend.py": "fdc19d11e02ccfedb6dc9284c935542a0e4f60e2c3f51208990cb3528898ec4d",
+    "frontend/GPL-3.0-only.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "frontend/NOTICE.md": "5e9242cb868d4546dc7edfa9c2d672274fd0c45f8de06c39bfb76476de6821a1",
+    "frontend/planning-card.js": "ba1fb7473f582c3b3fa072aaf0a5f3a4050a914cf48cc738d5f3d3a891055e79",
+    "ha_runtime.cpython-314-aarch64-linux-musl.so": "d1cd55f5e0805e1f8b8227c6b9b1bb1e43268678915af382784fead4189b05f6",
+    "ha_runtime.cpython-314-x86_64-linux-musl.so": "e08a2124c7d369aaec8d621d63e4bb92c9f40189589d47e327e9b929271e0680",
+    "icon.png": "8925e28f6d3e2eafde22a14896e58ec292bfddd1ae58d881a6b4de1ac1c30bc2",
+    "logo.png": "960321934daedcd75e08e7146d4f983dae0081e910d00750793053205a43d3ba",
+    "manifest.json": "b1ee03d3e9b86aff19a51af36da222f90e8471fbac92c8c23f5fd1621dc1f804",
+    "model.cpython-314-aarch64-linux-musl.so": "2be4fc4ce059089174279d74547c807dbb408ac4d7e170416456b53b5f02b3c3",
+    "model.cpython-314-x86_64-linux-musl.so": "0726f05c5ac9f4afd184d80b4288d326fa69fda33a090aface221fb7a2e3562c",
+    "native_scheduler.cpython-314-aarch64-linux-musl.so": "2c7b51c20acbcf0ef43fa7095cad4d49e3e7e7350348cf0e92750da30362ad44",
+    "native_scheduler.cpython-314-x86_64-linux-musl.so": "ca335bcda3fd54f2fb620e77754578466428e110cbce30cbd71a1720515db074",
+    "sensor.py": "29c54924d7b3467df19bcbc52a47d86274ef424fca6a9006c104055676669ae1",
+    "services.yaml": "e8efca112ba2e163ebfc49cde2cc5bbb6f6426a5103476be8d1a38446c15fa7e",
+    "strings.json": "4c1f4a902f2227043f60b5d150a3795efa64a34a77ddc53e1701bbdae75c9957",
+    "targets.cpython-314-aarch64-linux-musl.so": "d97ba58b9ec0507bd0c6fc967841c62dc86f6b29c9d5f244fe32a8d9a084d060",
+    "targets.cpython-314-x86_64-linux-musl.so": "6ba41470aabe52d7f90a22067334795b0328b2e58e7e8fe36568c554b6396028",
+    "translations/en.json": "4c1f4a902f2227043f60b5d150a3795efa64a34a77ddc53e1701bbdae75c9957"
+  },
+  "source_repository": "npinguin/rhi-planning",
+  "approved_release": false,
+  "basic_cutover_ready": false
+}
