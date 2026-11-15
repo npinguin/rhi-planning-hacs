@@ -1,9 +1,9 @@
 {
   "status": "PROTECTED_TEST_CANDIDATE",
-  "source_commit": "6c024bbbf2a9cf9d9f34def90e8363440f471beb",
-  "source_zip_sha256": "2183266c77cfbd365801561bef28df42cd726efed5e24d575765f3f1adf7fed6",
-  "protected_zip_sha256": "53fd21f0fa449fc7c1f28b0445f4196a7ce19b8a00f0c579876a4f2e9f2efdf2",
-  "manifest_version": "0.1.2",
+  "source_commit": "92cfc202eabe112a1f54ff597054074bf8e9cdb0",
+  "source_zip_sha256": "8c93399b4005003a65ded99ae7528624887bc11ba6e151c8b1b6b46795a2a123",
+  "protected_zip_sha256": "8a09e23a9bcc18add32c500a0642c6e44190f1be9ba6f15dd331ac06cf11d633",
+  "manifest_version": "0.1.3",
   "platforms": {
     "aarch64": {
       "ha_image": "ghcr.io/home-assistant/home-assistant@sha256:6785d1eca68747a524c156faae1b139ed415c07357386ae6fe17291986e59e82",
@@ -11,7 +11,7 @@
       "extension_suffix": ".cpython-314-aarch64-linux-musl.so",
       "cython": "3.2.9",
       "compiler": "cc (Alpine 15.2.0) 15.2.0",
-      "protected_zip_sha256": "5e0680cd545497963a1b2b1b4bae361540f0b680b2405a16b713bb9d27bb8118"
+      "protected_zip_sha256": "ca5a1c5a4229aa78fbd66aed4496b6d133672b38e0921835e26c6f80ea4bbe62"
     },
     "x86_64": {
       "ha_image": "ghcr.io/home-assistant/home-assistant@sha256:6785d1eca68747a524c156faae1b139ed415c07357386ae6fe17291986e59e82",
@@ -19,7 +19,7 @@
       "extension_suffix": ".cpython-314-x86_64-linux-musl.so",
       "cython": "3.2.9",
       "compiler": "cc (Alpine 15.2.0) 15.2.0",
-      "protected_zip_sha256": "479d6f35c82b5d598f7df1b53a215745649ff8f065a180d658b79a2b80066b99"
+      "protected_zip_sha256": "bf5cc1cfcd9b3fb239fb098d9a771c7e5125dd3cce933768bd3525251dfb2f50"
     }
   },
   "protected_modules": [
@@ -45,8 +45,8 @@
     "brand/logo.png": "d9bded56e39e44bdf9cc06ba6db92d1ac16e3e497a95071e6672034f4e1884ee",
     "brand/logo@2x.png": "0b6af551f2939c13d18eb9ef763c0dbed5e75c0956da8548d9b17315e44a568c",
     "config_flow.py": "1416bb296e11fb5312028f2b47892663e11f7fab336b9d27b8c51752ee2ac4e7",
-    "diagnostics.py": "d1afed0b120d2e4629372f6f0fbbca8d6c9b2ab8f16bd2b2f3be9a1b3ef3b3a3",
-    "frontend.py": "33c3e0e5a59077ade9012312ebbb4df5cea6b77f677764565444d267d569ac2d",
+    "diagnostics.py": "9a8165f8b6d4fe48b72f79bd04ae2ba2502aecc6efa181ba217727ec7c600647",
+    "frontend.py": "b3f16e86c8a1ba5d3430809181939253da12e607a1900553b2cc6a7b321c4bd0",
     "frontend/GPL-3.0-only.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
     "frontend/NOTICE.md": "5e9242cb868d4546dc7edfa9c2d672274fd0c45f8de06c39bfb76476de6821a1",
     "frontend/planning-card.js": "34256c8c726a5befa83b7f9acca01b6638b37d1b3e549745482b2680d85786ca",
@@ -54,14 +54,14 @@
     "ha_runtime.cpython-314-x86_64-linux-musl.so": "e08a2124c7d369aaec8d621d63e4bb92c9f40189589d47e327e9b929271e0680",
     "icon.png": "8925e28f6d3e2eafde22a14896e58ec292bfddd1ae58d881a6b4de1ac1c30bc2",
     "logo.png": "960321934daedcd75e08e7146d4f983dae0081e910d00750793053205a43d3ba",
-    "manifest.json": "756c9397fcbc2b3e60d7d7ce14cd8c54af8ca62fd1003a309f984355ce8639d9",
+    "manifest.json": "79ec9aa6616800dad303a3f4d1a284dfc9df5012d78a879ce4b886818befe61a",
     "model.cpython-314-aarch64-linux-musl.so": "2be4fc4ce059089174279d74547c807dbb408ac4d7e170416456b53b5f02b3c3",
     "model.cpython-314-x86_64-linux-musl.so": "0726f05c5ac9f4afd184d80b4288d326fa69fda33a090aface221fb7a2e3562c",
     "native_scheduler.cpython-314-aarch64-linux-musl.so": "2c7b51c20acbcf0ef43fa7095cad4d49e3e7e7350348cf0e92750da30362ad44",
     "native_scheduler.cpython-314-x86_64-linux-musl.so": "ca335bcda3fd54f2fb620e77754578466428e110cbce30cbd71a1720515db074",
     "sensor.py": "29c54924d7b3467df19bcbc52a47d86274ef424fca6a9006c104055676669ae1",
     "services.yaml": "e8efca112ba2e163ebfc49cde2cc5bbb6f6426a5103476be8d1a38446c15fa7e",
-    "strings.json": "4c1f4a902f2227043f60b5d150a3795efa64a34a77ddc53e1701bbdae75c9957",
+    "strings.json": "fb2c9ad003056c5cc0bdf456a3e69cb867ae19b24e3fd325927b0905f4f67304",
     "targets.cpython-314-aarch64-linux-musl.so": "d97ba58b9ec0507bd0c6fc967841c62dc86f6b29c9d5f244fe32a8d9a084d060",
     "targets.cpython-314-x86_64-linux-musl.so": "6ba41470aabe52d7f90a22067334795b0328b2e58e7e8fe36568c554b6396028",
     "translations/en.json": "4c1f4a902f2227043f60b5d150a3795efa64a34a77ddc53e1701bbdae75c9957"
