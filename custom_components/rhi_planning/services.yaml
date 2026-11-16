@@ -1,4 +1,11 @@
-get_overview: {}
+get_overview:
+  fields:
+    owner:
+      selector:
+        text: {}
+    asset_ids:
+      selector:
+        object: {}
 
 set_schedule_enabled:
   fields:
@@ -14,8 +21,21 @@ set_schedule_enabled:
       required: true
       selector:
         boolean: {}
+    owner:
+      selector:
+        text: {}
+    asset_ids:
+      selector:
+        object: {}
 
-get_authoring: {}
+get_authoring:
+  fields:
+    asset_ids:
+      selector:
+        object: {}
+    owner:
+      selector:
+        text: {}
 set_target_approval:
   fields:
     expected_revision:
@@ -32,3 +52,15 @@ set_target_approval:
       required: true
       selector:
         boolean: {}
+    owner:
+      selector:
+        text: {}
+    asset_id:
+      selector:
+        text: {}
+    scope_owner:
+      selector:
+        text: {}
+    scope_asset_ids:
+      selector:
+        object: {}

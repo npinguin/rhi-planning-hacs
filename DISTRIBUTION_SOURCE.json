@@ -1,40 +1,7 @@
 {
-  "status": "PROTECTED_TEST_CANDIDATE",
-  "source_commit": "92cfc202eabe112a1f54ff597054074bf8e9cdb0",
-  "source_zip_sha256": "8c93399b4005003a65ded99ae7528624887bc11ba6e151c8b1b6b46795a2a123",
-  "protected_zip_sha256": "8a09e23a9bcc18add32c500a0642c6e44190f1be9ba6f15dd331ac06cf11d633",
-  "manifest_version": "0.1.3",
-  "platforms": {
-    "aarch64": {
-      "ha_image": "ghcr.io/home-assistant/home-assistant@sha256:6785d1eca68747a524c156faae1b139ed415c07357386ae6fe17291986e59e82",
-      "python": "3.14.10",
-      "extension_suffix": ".cpython-314-aarch64-linux-musl.so",
-      "cython": "3.2.9",
-      "compiler": "cc (Alpine 15.2.0) 15.2.0",
-      "protected_zip_sha256": "ca5a1c5a4229aa78fbd66aed4496b6d133672b38e0921835e26c6f80ea4bbe62"
-    },
-    "x86_64": {
-      "ha_image": "ghcr.io/home-assistant/home-assistant@sha256:6785d1eca68747a524c156faae1b139ed415c07357386ae6fe17291986e59e82",
-      "python": "3.14.10",
-      "extension_suffix": ".cpython-314-x86_64-linux-musl.so",
-      "cython": "3.2.9",
-      "compiler": "cc (Alpine 15.2.0) 15.2.0",
-      "protected_zip_sha256": "bf5cc1cfcd9b3fb239fb098d9a771c7e5125dd3cce933768bd3525251dfb2f50"
-    }
-  },
-  "protected_modules": [
-    "ha_runtime.py",
-    "model.py",
-    "native_scheduler.py",
-    "targets.py"
-  ],
-  "readable_native_adapters": [
-    "__init__.py",
-    "config_flow.py",
-    "diagnostics.py",
-    "frontend.py",
-    "sensor.py"
-  ],
+  "source_commit": "9449429b504b705a0a1239f66d30aa65bb4f8f17",
+  "manifest_version": "0.1.4",
+  "protected_zip_sha256": "801ca73dcc154e2233d9aa8d62946d4f5062e5dc5d923faf26bf72013c7f6ecd",
   "runtime_files": {
     "DISTRIBUTION_NOTICE.md": "398dc88e492dc9ed4300ac4c5afd0f963a3b3adb764b9c1fd2e45e81c02ca31f",
     "GPL-3.0-only.txt": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0",
@@ -49,24 +16,46 @@
     "frontend.py": "b3f16e86c8a1ba5d3430809181939253da12e607a1900553b2cc6a7b321c4bd0",
     "frontend/GPL-3.0-only.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
     "frontend/NOTICE.md": "5e9242cb868d4546dc7edfa9c2d672274fd0c45f8de06c39bfb76476de6821a1",
-    "frontend/planning-card.js": "34256c8c726a5befa83b7f9acca01b6638b37d1b3e549745482b2680d85786ca",
-    "ha_runtime.cpython-314-aarch64-linux-musl.so": "d1cd55f5e0805e1f8b8227c6b9b1bb1e43268678915af382784fead4189b05f6",
-    "ha_runtime.cpython-314-x86_64-linux-musl.so": "e08a2124c7d369aaec8d621d63e4bb92c9f40189589d47e327e9b929271e0680",
+    "frontend/planning-card.js": "03b8d449bee198ce9323e5ab63375f2be55e650685490e5d414bb3f008af2845",
+    "ha_runtime.cpython-314-aarch64-linux-musl.so": "f29df10560781d8803618845fc50c42f266d96df69f5e4e79547683c2f2d6486",
+    "ha_runtime.cpython-314-x86_64-linux-musl.so": "b1fafbdabbcf4007eff4b40471035bad5dedc03db7eca5621a83d06267e88e95",
     "icon.png": "8925e28f6d3e2eafde22a14896e58ec292bfddd1ae58d881a6b4de1ac1c30bc2",
     "logo.png": "960321934daedcd75e08e7146d4f983dae0081e910d00750793053205a43d3ba",
-    "manifest.json": "79ec9aa6616800dad303a3f4d1a284dfc9df5012d78a879ce4b886818befe61a",
-    "model.cpython-314-aarch64-linux-musl.so": "2be4fc4ce059089174279d74547c807dbb408ac4d7e170416456b53b5f02b3c3",
-    "model.cpython-314-x86_64-linux-musl.so": "0726f05c5ac9f4afd184d80b4288d326fa69fda33a090aface221fb7a2e3562c",
-    "native_scheduler.cpython-314-aarch64-linux-musl.so": "2c7b51c20acbcf0ef43fa7095cad4d49e3e7e7350348cf0e92750da30362ad44",
-    "native_scheduler.cpython-314-x86_64-linux-musl.so": "ca335bcda3fd54f2fb620e77754578466428e110cbce30cbd71a1720515db074",
+    "manifest.json": "71394b8b5796452700f7c056277965f046d663f462cec21c223d748aaed1a906",
+    "model.cpython-314-aarch64-linux-musl.so": "deb93085bb395c4fc78cb2d294908f1ff3c9461b6a9f3b3a117a0153aa9274c1",
+    "model.cpython-314-x86_64-linux-musl.so": "9363853d5724758fb72a984ea2ef20bb777007097bc12c0aee09e80e2a66c3b5",
+    "native_scheduler.cpython-314-aarch64-linux-musl.so": "0d08292f30325579af6b171e30cd47cc65c75163ce34ab4fec3716d47d2fa8d9",
+    "native_scheduler.cpython-314-x86_64-linux-musl.so": "0eb503c252b4706c5518f629d10c5617f63c6ac23430d7c486433cfb40e59ec3",
     "sensor.py": "29c54924d7b3467df19bcbc52a47d86274ef424fca6a9006c104055676669ae1",
-    "services.yaml": "e8efca112ba2e163ebfc49cde2cc5bbb6f6426a5103476be8d1a38446c15fa7e",
+    "services.yaml": "7539c938ded92c9709a90ab8c19d394c1afd0543dcbbb91aee1f4b7a66356713",
     "strings.json": "fb2c9ad003056c5cc0bdf456a3e69cb867ae19b24e3fd325927b0905f4f67304",
-    "targets.cpython-314-aarch64-linux-musl.so": "d97ba58b9ec0507bd0c6fc967841c62dc86f6b29c9d5f244fe32a8d9a084d060",
-    "targets.cpython-314-x86_64-linux-musl.so": "6ba41470aabe52d7f90a22067334795b0328b2e58e7e8fe36568c554b6396028",
+    "targets.cpython-314-aarch64-linux-musl.so": "f48661ab1850c003eed3805d42cca430647755bc3805e06e91f677fcca4ccd61",
+    "targets.cpython-314-x86_64-linux-musl.so": "eee3d5da6c835dfe153c1415f75169e46d28df69e4c07db5006aadd77b091a69",
     "translations/en.json": "4c1f4a902f2227043f60b5d150a3795efa64a34a77ddc53e1701bbdae75c9957"
   },
-  "source_repository": "npinguin/rhi-planning",
+  "protected_modules": [
+    "ha_runtime.py",
+    "model.py",
+    "native_scheduler.py",
+    "targets.py"
+  ],
+  "readable_native_adapters": [
+    "__init__.py",
+    "config_flow.py",
+    "diagnostics.py",
+    "frontend.py",
+    "sensor.py"
+  ],
+  "status": "PROTECTED_TEST_CANDIDATE",
   "approved_release": false,
-  "basic_cutover_ready": false
+  "platforms": {
+    "aarch64": {
+      "extension_suffix": ".cpython-314-aarch64-linux-musl.so",
+      "python": "3.14.10"
+    },
+    "x86_64": {
+      "extension_suffix": ".cpython-314-x86_64-linux-musl.so",
+      "python": "3.14.10"
+    }
+  }
 }
