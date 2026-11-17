@@ -58,6 +58,9 @@ set_target_approval:
     asset_id:
       selector:
         text: {}
+    association_only:
+      selector:
+        boolean: {}
     scope_owner:
       selector:
         text: {}

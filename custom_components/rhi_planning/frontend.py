@@ -22,7 +22,7 @@ RESOURCE = "/rhi_planning/frontend/planning-card.js"
 class PlanningCardView(HomeAssistantView):
     url = RESOURCE
     name = "rhi_planning:frontend:card"
-    # Static JavaScript only. All plan data still requires the admin HA action.
+    # Static JavaScript only. Plan data requires authenticated HA service access.
     requires_auth = False
 
     def __init__(self, hass, payload, version):
