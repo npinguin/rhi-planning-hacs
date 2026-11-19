@@ -1,7 +1,7 @@
 {
-  "source_commit": "d257fae40169b1d8c9bdac78f8b054c26e345e77",
-  "manifest_version": "0.1.8",
-  "protected_zip_sha256": "da9d007de5fd46a16b47bd7de7dfc62c1027978a6444656043dba4c1354e4f30",
+  "source_commit": "09843829c73f5d5d05d8201ed82d188d56807d35",
+  "manifest_version": "0.1.9",
+  "protected_zip_sha256": "5d85c7cc7770cf59d9cc5e11d3e0646d7df74fecefca348f89468b1995bb9410",
   "runtime_files": {
     "DISTRIBUTION_NOTICE.md": "398dc88e492dc9ed4300ac4c5afd0f963a3b3adb764b9c1fd2e45e81c02ca31f",
     "GPL-3.0-only.txt": "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0",
@@ -16,12 +16,12 @@
     "frontend.py": "410d9a0e745c7fe5e07a3eca0f934cd566cae64065e33625667e69e90042b51a",
     "frontend/GPL-3.0-only.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
     "frontend/NOTICE.md": "5e9242cb868d4546dc7edfa9c2d672274fd0c45f8de06c39bfb76476de6821a1",
-    "frontend/planning-card.js": "f169421a3394f4f8c8da52175616e706783098fab689a3b5450c243ba2ca54f3",
-    "ha_runtime.cpython-314-aarch64-linux-musl.so": "2b082d655ce5672b8349aa7c7962b3963214e5e0f585c014200fa621f5e13a0e",
-    "ha_runtime.cpython-314-x86_64-linux-musl.so": "32b93478525b9ba1837c6cc8e1b0c9648f9a8af67b02126105f370f1c423a96e",
+    "frontend/planning-card.js": "75cd16ea6b7bf0b7af7dd6061d9f6a7ac43ad5a889551f60c8f552c0ef6280ff",
+    "ha_runtime.cpython-314-aarch64-linux-musl.so": "e9dd3fcec58b8b22e10839bc21a363043a5e186e1ffe24e8eeabdec9bc311c86",
+    "ha_runtime.cpython-314-x86_64-linux-musl.so": "74375fc3b916d677611ef0f3a573c239cd8e4ac26cac43767b02f1f97e4dda56",
     "icon.png": "8925e28f6d3e2eafde22a14896e58ec292bfddd1ae58d881a6b4de1ac1c30bc2",
     "logo.png": "960321934daedcd75e08e7146d4f983dae0081e910d00750793053205a43d3ba",
-    "manifest.json": "6d95b2ad076060dcc19dc2d21ed87115a7f41a85c132b46a15fa84d964182209",
+    "manifest.json": "9d1fe92b143eebb8763cd4c8831b0f499173b68f5fa83f666af4dfaac3fb865d",
     "model.cpython-314-aarch64-linux-musl.so": "215687b5ef966a4e560fdf3eb8b4a0cc9e4b26bfaabb341801b1031be730aef7",
     "model.cpython-314-x86_64-linux-musl.so": "6329dbb78386aefc0336fceeb5ae35bf748c789716068d72f56342179184c4f5",
     "native_scheduler.cpython-314-aarch64-linux-musl.so": "b2aeba3316b6703d7fd3713728c3eba2e687ee65ec78337040cd6a4cbccc9163",
@@ -29,8 +29,8 @@
     "sensor.py": "1419c231ad57577da3b3100b9c7dd765950658873c6f5086faa4515d89f41fa1",
     "services.yaml": "ce82f195727c6f30aec5b02d5ce69e2ab2eb9164b54ab0212af3aebd465f955e",
     "strings.json": "fb2c9ad003056c5cc0bdf456a3e69cb867ae19b24e3fd325927b0905f4f67304",
-    "targets.cpython-314-aarch64-linux-musl.so": "3c4e271ca1fff92becf3ca2f87d37103bad8ce15f5575b65c479c29d0f6d8a7c",
-    "targets.cpython-314-x86_64-linux-musl.so": "89dd1af8c7b29f3b52043b712f8d4e153e4f439480017dd0e27f21d2d5ea1fa0",
+    "targets.cpython-314-aarch64-linux-musl.so": "fc893f17cd0a0f38b79f52a2d424892085c905cd26597a6449e15adcd479c77c",
+    "targets.cpython-314-x86_64-linux-musl.so": "dc40a8090bcdfe9e7b44e9920e606561b5b631267fe915a4c643e696e9bee33f",
     "translations/en.json": "4c1f4a902f2227043f60b5d150a3795efa64a34a77ddc53e1701bbdae75c9957"
   },
   "protected_modules": [
