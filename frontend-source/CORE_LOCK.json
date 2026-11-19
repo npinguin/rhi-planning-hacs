@@ -1,8 +1,8 @@
 {
-  "version": "1.6.5",
-  "source_commit": "e095ddee728766fda31ae8aac8a7c42e9d63b1c3",
+  "version": "1.6.6",
+  "source_commit": "94c291049c09eee2fb416f47b441d3688c1fcb9d",
   "source_repository": "npinguin/rhi-ux-core",
   "license": "GPL-3.0-only",
-  "js_sha256": "9cc9b3a518b59c1e96aa2252fe8378f9b81be8046978be9f8dadd2cd25dad989",
-  "css_sha256": "166b8bac536c8ca8d2e753e48edbc5d091a79a91051a38bad8caf025cab71f71"
+  "js_sha256": "1da3cc55d21ac1bc45cedc4b40c93b33ef82c5055ff0f59e00f3641ceb169a23",
+  "css_sha256": "2179df5af6d8873b854c5178637aa422f505e535e9acfe095e70a5c255fd905e"
 }

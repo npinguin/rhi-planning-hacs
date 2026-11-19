@@ -6,6 +6,7 @@ from homeassistant.core import callback
 from homeassistant.helpers import entity_registry as er
 from homeassistant.helpers.event import TrackStates, async_track_state_change_filtered
 from .model import activity_publication
+from .targets import native_action_names
 
 
 async def async_setup_entry(hass, entry, async_add_entities):
@@ -19,14 +20,16 @@ class PilotStatus(SensorEntity):
 
     def __init__(self, entry):
         self._attr_unique_id = entry.entry_id + "_pilot_status"
+        self.entry = entry
         self.runtime = entry.runtime_data
         self._source_revision = 0
 
     async def async_added_to_hass(self):
         await super().async_added_to_hass()
         tracker = async_track_state_change_filtered(
-            self.hass, TrackStates(False, set(), {"sensor", "switch"}), self._source_changed)
+            self.hass, TrackStates(False, set(), {"sensor", "switch", "light", "cover", "input_boolean", "script"}), self._source_changed)
         self.async_on_remove(tracker.async_remove)
+        self.async_on_remove(self.entry.add_update_listener(self._entry_changed))
         self.async_on_remove(self.hass.bus.async_listen(er.EVENT_ENTITY_REGISTRY_UPDATED, self._registry_changed))
 
     @callback
@@ -36,11 +39,32 @@ class PilotStatus(SensorEntity):
             return
         item = er.async_get(self.hass).async_get(entity_id)
         states = (event.data.get("old_state"), event.data.get("new_state"))
-        if ((item and item.platform == "scheduler" and item.domain == "switch")
-                or (item and item.domain == "sensor" and any(
-                    state and activity_publication(state.attributes,item.platform,item.unique_id)
+        if not item:
+            return
+        if ((item.platform == "scheduler" and item.domain == "switch")
+                or (item.domain == "sensor" and any(
+                    state and (activity_publication(state.attributes,item.platform,item.unique_id)
+                               or "rhi_planning_targets" in state.attributes
+                                  and (item.platform.startswith("rhi_") or
+                                       item.platform == "template" and item.unique_id.endswith("_planning_targets")))
                     for state in states))):
             self._invalidate()
+            return
+        if item.domain in ("light","cover","switch","input_boolean","script"):
+            def capability(state):
+                if state is None or state.attributes.get("restored"):
+                    return None
+                attrs=state.attributes
+                actions=native_action_names(item.domain,attrs.get("device_class"),state.state,attrs.get("supported_features"))
+                if item.domain=="script":
+                    actions=("turn_on",) if state.state in ("on","off") else ()
+                return (actions,state.name)
+            # Physical on/off alone does not change the authoring catalog.
+            if capability(states[0])!=capability(states[1]):
+                self._invalidate()
+
+    async def _entry_changed(self, hass, entry):
+        self._invalidate()
 
     @callback
     def _registry_changed(self, event):

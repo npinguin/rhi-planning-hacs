@@ -17,7 +17,7 @@ Third-party rights remain unchanged.
 
 The original Core preferred source, license, build script, CSS, JavaScript and
 branding asset are publicly accessible at the exact revision:
-https://github.com/npinguin/rhi-ux-core/tree/e095ddee728766fda31ae8aac8a7c42e9d63b1c3
+https://github.com/npinguin/rhi-ux-core/tree/94c291049c09eee2fb416f47b441d3688c1fcb9d
 
 Run Core's build script there with Node.js >=20 to recreate the pinned inputs.
 The complete license text is in the integration frontend folder. To reproduce
